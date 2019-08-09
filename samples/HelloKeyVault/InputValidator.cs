@@ -45,27 +45,29 @@ namespace Sample.Microsoft.HelloKeyVault
             if ( keyOperations.Count == 0 )
             {
                 Console.Out.WriteLine( "No operation is provided. Executing all the key and secret operations!" );
-                keyOperations.Add( KeyOperationType.CREATE_KEY );
-                keyOperations.Add( KeyOperationType.GET_KEY );                
-                keyOperations.Add( KeyOperationType.IMPORT_KEY );
-                keyOperations.Add( KeyOperationType.BACKUP_RESTORE );
-                keyOperations.Add( KeyOperationType.SIGN_VERIFY );
-                keyOperations.Add( KeyOperationType.WRAP_UNWRAP );
-                keyOperations.Add( KeyOperationType.ENCRYPT );
-                keyOperations.Add( KeyOperationType.DECRYPT );
-                keyOperations.Add( KeyOperationType.UPDATE_KEY );
-                keyOperations.Add( KeyOperationType.LIST_KEYVERSIONS );
-                keyOperations.Add( KeyOperationType.DELETE_KEY );
-                keyOperations.Add( KeyOperationType.CREATE_SECRET );
-                keyOperations.Add( KeyOperationType.GET_SECRET );
-                keyOperations.Add( KeyOperationType.LIST_SECRETS );
-                keyOperations.Add( KeyOperationType.DELETE_SECRET );
-                keyOperations.Add( KeyOperationType.CREATE_CERTIFICATE );
-                keyOperations.Add( KeyOperationType.IMPORT_CERTIFICATE );
-                keyOperations.Add( KeyOperationType.EXPORT_CERTIFICATE );
-                keyOperations.Add( KeyOperationType.LIST_CERTIFICATEVERSIONS );
-                keyOperations.Add( KeyOperationType.LIST_CERTIFICATES );
-                keyOperations.Add( KeyOperationType.DELETE_CERTIFICATE );
+                keyOperations.AddRange(Enum.GetValues(typeof(KeyOperationType)).Cast<KeyOperationType>());
+                
+                //keyOperations.Add( KeyOperationType.CREATE_KEY );
+                //keyOperations.Add( KeyOperationType.GET_KEY );                
+                //keyOperations.Add( KeyOperationType.IMPORT_KEY );
+                //keyOperations.Add( KeyOperationType.BACKUP_RESTORE );
+                //keyOperations.Add( KeyOperationType.SIGN_VERIFY );
+                //keyOperations.Add( KeyOperationType.WRAP_UNWRAP );
+                //keyOperations.Add( KeyOperationType.ENCRYPT );
+                //keyOperations.Add( KeyOperationType.DECRYPT );
+                //keyOperations.Add( KeyOperationType.UPDATE_KEY );
+                //keyOperations.Add( KeyOperationType.LIST_KEYVERSIONS );
+                //keyOperations.Add( KeyOperationType.DELETE_KEY );
+                //keyOperations.Add( KeyOperationType.CREATE_SECRET );
+                //keyOperations.Add( KeyOperationType.GET_SECRET );
+                //keyOperations.Add( KeyOperationType.LIST_SECRETS );
+                //keyOperations.Add( KeyOperationType.DELETE_SECRET );
+                //keyOperations.Add( KeyOperationType.CREATE_CERTIFICATE );
+                //keyOperations.Add( KeyOperationType.IMPORT_CERTIFICATE );
+                //keyOperations.Add( KeyOperationType.EXPORT_CERTIFICATE );
+                //keyOperations.Add( KeyOperationType.LIST_CERTIFICATEVERSIONS );
+                //keyOperations.Add( KeyOperationType.LIST_CERTIFICATES );
+                //keyOperations.Add( KeyOperationType.DELETE_CERTIFICATE );
             }
             return keyOperations;
         }
