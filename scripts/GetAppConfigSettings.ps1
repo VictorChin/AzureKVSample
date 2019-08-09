@@ -35,7 +35,7 @@ $VerbosePreference = "SilentlyContinue"
 # Prep the cert credential data
 # **********************************************************************************************
 $certificateName = "$applicationName" + "cert"
-$myCertThumbprint = (New-SelfSignedCertificate -Type Custom -Subject "$certificateName"-KeyUsage DigitalSignature -KeyAlgorithm RSA -KeyLength 2048 -CertStoreLocation "Cert:\CurrentUser\My" -Provider "Microsoft Enhanced Cryptographic Provider v1.0" ).Thumbprint
+$myCertThumbprint = (New-SelfSignedCertificate -Type Custom -Subject "$certificateName"-KeyUsage DigitalSignature -keySpec Signature -KeyAlgorithm RSA -KeyLength 2048 -CertStoreLocation "Cert:\CurrentUser\My").Thumbprint
 $x509 = (Get-ChildItem -Path cert:\CurrentUser\My\$myCertthumbprint)
 $password = Read-Host -Prompt "Please enter the certificate password." -AsSecureString
 
